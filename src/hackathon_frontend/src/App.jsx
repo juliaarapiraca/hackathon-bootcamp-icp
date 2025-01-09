@@ -1,30 +1,19 @@
 import { useState } from 'react';
 import { hackathon_backend } from 'declarations/hackathon_backend';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Evento from './components/Evento';
+import Equipe from './components/Equipe';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    hackathon_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
+  
 
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    <Router>
+      <Routers>
+        <Route path = '/' element = {<Evento/>} />
+        <Route path = '/equipelink/:idEvento' element = {<Equipe/>} />
+      </Routers>
+    </Router>
   );
 }
 
