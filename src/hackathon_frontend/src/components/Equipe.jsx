@@ -4,7 +4,7 @@ import { hackathon_backend } from 'declarations/hackathon_backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button, Form, Modal, ListGroup, Navbar, Nav, Card, Container } from 'react-bootstrap';
 
-function Equipe() {
+function equipe() {
 
   const {idEvento} = useParams();
 
@@ -12,6 +12,7 @@ function Equipe() {
     consultarEquipe();
   }, []);
 
+  //Constante utilizada para controle de validação do formulário preenchido no Modal de cadastro/alteração
   const [validated, setValidated] = useState(false);
 
   const [idEquipe, setIdEquipe] = useState(null);
@@ -24,6 +25,7 @@ function Equipe() {
 
   const [equipes, setEquipes] = useState([]);
 
+  // Constantes utilizadas para controle do Modal utilizado para preenchimento do formulário de cadastro/alteração
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -188,4 +190,4 @@ function Equipe() {
   );
 }
 
-export default Equipe;
+export default equipe;

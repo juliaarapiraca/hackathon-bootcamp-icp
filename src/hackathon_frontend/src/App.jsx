@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { hackathon_backend } from 'declarations/hackathon_backend';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Evento from './components/evento';
-import Equipe from './components/equipe';
+import Evento from './components/Evento';
+import Equipe from './components/Equipe';
 
 function App() {
    

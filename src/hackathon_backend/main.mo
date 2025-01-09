@@ -147,7 +147,7 @@ public func alterar_equipe( id_ev: Nat,
                             n_participante4: Text,
                           ): async(){
   
-  let eq: Equipe = {  id = id_equipe;
+  let eq: Equipe = {  id = id_eq;
                       id_evento = id_ev;
                       nome = nome;
                       descricao_projeto = desc_proj;

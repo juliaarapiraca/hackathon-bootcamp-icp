@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { hackathon_backend } from 'declarations/hackathon_backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container, Table, Button, Form, Stack, Modal, Navbar, Nav, Card} from 'react-bootstrap';
+import { Table, Button, Form, Stack, Modal, Navbar, Nav, Card, Container } from 'react-bootstrap';
 
+function evento() {
 
-function Evento() {
-
-  useEffect(async () => {consultarEventos();}, []);
+  useEffect ( async () => {
+    consultarEventos();
+  }, []);
 
   const [idEvento, setIdEvento] = useState(null);
   const [descricao, setDescricao] = useState('');
@@ -17,11 +18,12 @@ function Evento() {
 
   const [eventos, setEventos] = useState([]);
 
-
+  // Constantes utilizadas para controle do Modal utilizado para preenchimento do formulário de cadastro/alteração
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  //Constante utilizada para controle de validação do formulário preenchido no Modal de cadastro/alteração
   const [validated, setValidated] = useState(false);
 
   const salvarEvento = async (event) => {
@@ -122,7 +124,7 @@ function Evento() {
                           <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
                           <path d="M13.5 6.5l4 4" />
                         </svg>
-                    </Button>
+                    </Button>&nbsp;&nbsp;
                     <Button onClick={ () => { excluirEvento(linha.id) } }  variant="primary" >
                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -132,7 +134,7 @@ function Evento() {
                         <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
                         <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                       </svg>
-                    </Button>                    
+                    </Button>&nbsp;&nbsp;                      
                     <Button onClick={ () => { visualizarEquipe(linha.id)  }} variant="primary" >Equipe</Button>
                   </Stack>
                   </td>
@@ -202,6 +204,6 @@ function Evento() {
 
     </main>
   );
-};
+}
 
-export default Evento;
+export default evento;
